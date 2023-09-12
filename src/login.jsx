@@ -27,7 +27,7 @@ function Login() {
     function Autenticar( evento )
     {
         evento.preventDefault();
-        fetch("http://10.139.75.32:8080/login", {
+        fetch( process.env.REACT_APP_BACKEND + "login", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ function Login() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#97AFCF",
+            background: "#ececec",
         }}
         >
             <Typography component="h1" variant='h5'>Entrar</Typography>

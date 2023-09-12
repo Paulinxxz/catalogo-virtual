@@ -9,13 +9,13 @@ function Filmes() {
     const[ duracao, setDuracao ] = useState ( "" );
     const[ categoria, setCategoria ] = useState ( "" );
     const[ imagem, setImagem ] = useState ( "" );
-    const[ cadastrar, setCadastrar ] = useState ( false );
+    const[ cadastro, setCadastro ] = useState ( false );
     const[ erro, setErro ] = useState ( false );
 
     function CadastrarFilmes( evento ) {
 
         evento.preventDefault();
-        fetch("http://10.139.75.32:8080/filmes", {
+        fetch( process.env.REACT_APP_BACKEND + "filmes", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -33,10 +33,12 @@ function Filmes() {
     } )
     .then( (resposta) => resposta.json() )
     .then( ( json ) => { 
-        if( json.titulo ) {
-            setTitulo( true );
+        if( json._id ) {
+            setCadastro( true );
+            setErro( false );
         } else {
             setErro( true );
+            setCadastro( false );
         }
     } )
     .catch( ( erro ) => {setErro( true ) } )
@@ -51,22 +53,22 @@ function Filmes() {
         setCategoria( "" );
         setImagem( "" );
 
-    }, [ cadastrar ] );
+    }, [ cadastro ] );
 
   return (
     <Container component="section" maxWidth= "xs">
         <Box sx={{ 
             mt: 5,
-            padding: "40px",
+            padding: "30px",
             borderRadius: "10px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             background: "#ececec",
         }}>
-            <Typography component="h1" variant='h5'>Filmes</Typography>
-            { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Desculpe tente novamente</Alert> )}
-            { cadastrar && ( <Alert severity="success" sx={{ mt: 2, mb: 2 }} >Filme Cadastrado</Alert> )}
+            <Typography component="h1" variant='h5'>Cadastre seu Filme</Typography>
+            { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Filme já cadastrado. Tente novamente por favor!</Alert> )}
+            { cadastro && ( <Alert severity="success" sx={{ mt: 2, mb: 2 }} >Obrigado por cadastrar seu filme!</Alert> )}
             <Box component="form" onSubmit={CadastrarFilmes} >
                 <TextField
                     type="text"
@@ -115,7 +117,7 @@ function Filmes() {
                 />
                 <TextField
                     type="text"
-                    label="Imagem"
+                    label="URL da Imagem"
                     margin="normal" 
                     variant="filled"
                     fullWidth

@@ -16,7 +16,7 @@ function Cadastro() {
     function Cadastrar( evento ) {
 
         evento.preventDefault();
-        fetch("http://10.139.75.32:8080/users", {
+        fetch( process.env.REACT_APP_BACKEND + "users", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ function Cadastro() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#97AFCF",
+            background: "#ececec",
         }}>
             <Typography component="h1" variant='h5'>Junte-se a nós</Typography>
             { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Desculpe tente novamente</Alert> )}
@@ -125,7 +125,6 @@ function Cadastro() {
                     label ="Eu li e concordo com os Termos e Condições"
                 />
                 <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 2}} color="primary" >Cadastrar</Button>
-                <Button type="" variant="outlined" fullWidth sx={ {mt: 2, mb: 2}} color="primary" >Limpar</Button>
                 <Grid container>
                     <Grid item xs>
                         Suporte
