@@ -82,7 +82,7 @@ function EditaFilmes() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#ececec",
+            background: "#9BCD8A",
         }}>
             <Typography component="h1" variant='h5'>Edite seu Filme</Typography>
             { erro && ( <Alert severity="warning">{erro}</Alert> )}

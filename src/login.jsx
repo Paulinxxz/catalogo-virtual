@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Avatar, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useNavigate, json } from 'react-router-dom';
@@ -50,6 +50,7 @@ function Login() {
     .catch( ( erro ) => {setErro( true ) } )
 }
   return (
+    <>
     <Container component="section" maxWidth="xs">
         <Box 
         sx={{ 
@@ -59,10 +60,13 @@ function Login() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#ececec",
+            background: "#9BCD8A",
+            width: "24rem",
         }}
         >
-            <Typography component="h1" variant='h5'>Entrar</Typography>
+            <Avatar src="/broken-image.jpg"/>
+            <Typography component="h1" variant='h7'>Entrar</Typography>
+            <br />
             { erro && ( <Alert severity="warning">Revise seus dados e tente novamente</Alert > ) }
             <Box component="form" onSubmit={Autenticar}>
                 <TextField
@@ -102,6 +106,7 @@ function Login() {
             </Box>
         </Box>
     </Container>
+    </>
     )
 }
 

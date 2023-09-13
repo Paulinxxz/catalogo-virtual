@@ -1,4 +1,4 @@
-import { Box, Button, Container, FormControlLabel, TextField, Typography, Checkbox, Grid, Alert } from "@mui/material";
+import { Box, Button, Container, FormControlLabel, TextField, Typography, Checkbox, Grid, Alert, Avatar } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from 'react';
 
@@ -64,9 +64,9 @@ function Cadastro() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#ececec",
+            background: "#9BCD8A",
         }}>
-            <Typography component="h1" variant='h5'>Junte-se a nós</Typography>
+            <Typography component="h1" variant='h7'>Junte-se a nós</Typography>
             { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Desculpe tente novamente</Alert> )}
             { cadastrar && ( <Alert severity="success" sx={{ mt: 2, mb: 2 }} >Obrigado por se cadastrar</Alert> )}
             <Box component="form" onSubmit={Cadastrar} >
@@ -123,6 +123,10 @@ function Cadastro() {
                 <FormControlLabel
                     control= { <Checkbox value={aceito} name="aceito" onChange={(e) => setAceito( !aceito ) } />}
                     label ="Eu li e concordo com os Termos e Condições"
+                />
+                <FormControlLabel
+                    control= { <Checkbox value={aceito} name="aceito" onChange={(e) => setAceito( !aceito ) } />}
+                    label ="Quero receber ofertas e descontos exclusivos"
                 />
                 <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 2}} color="primary" >Cadastrar</Button>
                 <Grid container>

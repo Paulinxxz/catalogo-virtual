@@ -64,9 +64,9 @@ function Filmes() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            background: "#ececec",
+            background: "#9BCD8A",
         }}>
-            <Typography component="h1" variant='h5'>Cadastre seu Filme</Typography>
+            <Typography component="h1" variant='h5'>Cadastre seu Produto</Typography>
             { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Filme já cadastrado. Tente novamente por favor!</Alert> )}
             { cadastro && ( <Alert severity="success" sx={{ mt: 2, mb: 2 }} >Obrigado por cadastrar seu filme!</Alert> )}
             <Box component="form" onSubmit={CadastrarFilmes} >

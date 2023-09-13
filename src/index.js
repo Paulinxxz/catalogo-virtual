@@ -7,12 +7,13 @@ import Login from './login';
 import Cadastro from './cadastro'
 import Filmes from './filmes'
 import EditaFilmes from './EditaFilmes';
+import Login2 from './login2';
 
 const theme = createTheme({
   palette: {
       mode: 'light',
       primary: {
-        main: '#640202',
+        main: '#247807',
       },
       secondary: {
         main: '#4778f7',
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/edicao/:id",
     element: <EditaFilmes />
+  },
+  {
+    path: "/login2",
+    element: < Login2/>
   }
 ]);
 
