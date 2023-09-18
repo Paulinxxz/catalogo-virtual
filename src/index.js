@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Login from './login';
 import Cadastro from './cadastro'
-import Filmes from './filmes'
-import EditaFilmes from './EditaFilmes';
-import Login2 from './login2';
+import Produtos from './produtos'
+import EditaProdutos from './EditaProdutos';
+import Login from './login';
+import Cadastro2 from './cadastro2'
+import Produtos2 from './produtos2'
+import Login2 from './login2'
+import EsqueciSenha from './EsqueciSenha'
+import EmailEnviado from './EmailEnviado'
+import Suporte from './suporte'
 
 const theme = createTheme({
   palette: {
@@ -37,26 +42,46 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />
+  }, 
+  {
+    path: "/suporte",
+    element: <Suporte />
   },
   {
     path: "/login",
     element: <Login /> 
   },
   {
+    path: "/login2",
+    element: <Login2 /> 
+  },
+  {
     path: "/cadastro",
     element: <Cadastro />
   },
   {
-    path: "/filmes",
-    element: <Filmes />
+    path: "/cadastro2",
+    element: <Cadastro2 /> 
+  },
+  {
+    path: "/produtos",
+    element: <Produtos />
+  },
+  {
+    path: "/produtos2",
+    element: <Produtos2 />
   },
   {
     path: "/edicao/:id",
-    element: <EditaFilmes />
+    element: <EditaProdutos />
   },
   {
-    path: "/login2",
-    element: < Login2/>
+    path: "/esquecisenha",
+    element: <EsqueciSenha />
+  },
+  {
+    path: "/emailenviado",
+    element: <EmailEnviado />
   }
 ]);
 

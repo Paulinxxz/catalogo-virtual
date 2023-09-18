@@ -1,114 +1,113 @@
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Paper, CssBaseline } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Alert, Avatar, Box, Button, Checkbox, Container, FormControlLabel, Grid, TextField, Typography } from '@mui/material';
+import React from 'react'
+import { useState, useEffect } from 'react';
+import { useNavigate, json } from 'react-router-dom';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-    </Typography>
-  );
+function Login() {
+
+    const[ email, setEmail ] = useState ( "" );
+    const[ senha, setSenha ] = useState ( "" );
+    const[ lembrar, setLembrar ] = useState ( false );
+    const[ login, setLogin ] = useState ( false );
+    const[ erro, setErro ] = useState ( false );
+    const navigate = useNavigate();
+
+    /*O useEffect é usado aqui para realizar ações específicas após o login do usuário, como armazenar informações no localStorage e redirecioná-lo para a página inicial. Ele é acionado apenas quando a variável login muda, o que garante que essas ações sejam executadas somente quando o login for bem-sucedido.*/
+    useEffect( () => {
+    
+        if( login ) {
+            localStorage.setItem( "usuario" , JSON.stringify( {email: email } ) );
+            setEmail( "" );
+            setSenha( "" );
+            navigate( "/" );
+        }
+
+    }, [ login ] );
+
+    function Autenticar( evento )
+    {
+        evento.preventDefault();
+        fetch( process.env.REACT_APP_BACKEND + "login", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(
+            {
+                email: email,
+                senha: senha
+            }
+        )
+    } )
+    .then( (resposta) => resposta.json() )
+    .then( ( json ) => { 
+        if( json.user ) {
+            setLogin( true );
+        } else {
+            setErro( true );
+        }
+    } )
+    .catch( ( erro ) => {setErro( true ) } )
 }
-
-const defaultTheme = createTheme();
-
-export default function SignInSide() {
-  
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
-
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <TextField
+    <>
+    <Container component="section" maxWidth="xs">
+        <Box 
+        sx={{ 
+            mt: 10,
+            padding: "50px",
+            borderRadius: "10px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            background: "#9BCD8A",
+            width: "24rem",
+        }}
+        >
+            <Avatar src="/broken-image.jpg"/>
+            <Typography component="h1" variant='h7'>Entrar</Typography>
+            <br />
+            { erro && ( <Alert severity="warning">Revise seus dados e tente novamente</Alert > ) }
+            <Box component="form" onSubmit={Autenticar}>
+                <TextField
+                type="email"
+                label="Email" 
+                variant="filled" 
                 margin="normal"
-                required
+                value={email}
+                onChange={ (e) => setEmail( e.target.value ) }
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-              />
-              <TextField
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Senha"
+                {...erro && ( "error" ) }
+                />
+
+                <TextField
                 type="password"
-                id="password"
-                autoComplete="current-password"
-              />
+                label="Senha"
+                variant="filled"
+                margin="normal" 
+                fullWidth
+                value={senha}
+                onChange={ (e) => setSenha( e.target.value ) }
+                />
 
-              
-
-
-
-              <FormControlLabel 
-              control={<Checkbox value="remember" color="primary" />}
-              label="Lembrar-me"
-              />
-              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>Entrar</Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Esqueceu a senha?
-                  </Link>
+                <FormControlLabel
+                    control= { <Checkbox value={lembrar} name="lembrar" onChange={(e) => setLembrar( !lembrar ) } />}
+                    label ="Lembrar-me"
+                />
+                <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 2}} color="primary" >Login</Button>
+                <Grid container>
+                    <Grid item xs>
+                        Esqueci a Senha
+                    </Grid>
+                    <Grid item>
+                        Cadastrar
+                    </Grid>
                 </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Cadastre-se"}
-                  </Link>
-                </Grid>
-              </Grid>
-              <Copyright sx={{ mt: 5 }} />
             </Box>
-          </Box>
-        </Grid>
-      </Grid>
-    </ThemeProvider>
-  );
+        </Box>
+    </Container>
+    </>
+    )
 }
+
+export default Login;

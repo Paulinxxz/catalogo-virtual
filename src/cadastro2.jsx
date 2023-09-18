@@ -2,18 +2,6 @@ import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box,
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-    </Typography>
-  );
-}
-
 const defaultTheme = createTheme();
 function SignInSide() {
   
@@ -28,22 +16,21 @@ function SignInSide() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <Grid container >
         <CssBaseline />
         <Grid
           item
           xs={false}
           sm={4}
           md={7}
-          sx={{
-            backgroundImage: 'url(https://images.mantosdofutebol.com.br/wp-content/uploads/2018/02/loja-de-camisas.jpg)',
-            backgroundPosition: 'center',
+          sx={{ 
+            backgroundImage: 'url(https://brechodofutebol.com/wp-content/uploads/2022/03/compramos-sua-camisa.jpg)',
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
-              my: 8,
+              my: 4,
               mx: 4,
               display: 'flex',
               flexDirection: 'column',
@@ -54,41 +41,71 @@ function SignInSide() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Entrar
+              Cadastrar
             </Typography>
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-              <TextField
+            <TextField
+                type="text"
+                label="Usuario" 
+                variant="filled" 
                 margin="normal"
                 fullWidth
+                />
+
+                <TextField
+                type="email"
                 label="Email"
-                name="email"
-              />
-              <TextField
-                margin="normal"
+                variant="filled"
+                margin="normal" 
                 fullWidth
-                name="password"
-                label="Senha"
+                />
+                
+                <TextField
                 type="password"
-              />
+                label="Senha"
+                variant="filled"
+                margin="normal" 
+                fullWidth
+                />
+
+                <TextField
+                type="tel"
+                label="Telefone"
+                variant="filled"
+                margin="normal" 
+                fullWidth
+                />
+
+                <TextField
+                type="text"
+                label="CPF"
+                variant="filled"
+                margin="normal" 
+                fullWidth
+                />
 
               <FormControlLabel 
               control={<Checkbox value="remember" color="primary" />}
-              label="Lembrar-me"
+              label ="Eu li e concordo com os Termos e Condições"
               />
-              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} color="primary">Entrar</Button>
+              <br></br>
+              <FormControlLabel
+                control= { <Checkbox value="remember" color="primary"/>}
+                label ="Quero receber ofertas e descontos exclusivos"
+            />
+              <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} color="primary">Cadastrar</Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="http://localhost:3000/esquecisenha" variant="body2">
-                    Esqueceu a senha?
+                  <Link href="http://localhost:3000/suporte" variant="body2">
+                    Suporte
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="http://localhost:3000/cadastro2" variant="body2">
-                    Cadastre-se
+                  <Link href="http://localhost:3000/login" variant="body2">
+                    Login
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
         </Grid>
