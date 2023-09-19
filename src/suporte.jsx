@@ -1,14 +1,4 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+import { AppBar, Card, CardContent, CssBaseline, Grid, Box, Toolbar, Typography, Container, Link } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SecurityIcon from '@mui/icons-material/Security';
 import PersonIcon from '@mui/icons-material/Person';
@@ -37,7 +27,7 @@ export default function Album() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-            <a href='http://localhost:3000/cadastro2' ><CloseIcon fontSize='large'></CloseIcon></a>
+            <a href='http://localhost:3000/home' ><CloseIcon fontSize='large'></CloseIcon></a>
         </Toolbar>
       </AppBar>
       <main>
@@ -63,7 +53,7 @@ export default function Album() {
         <Container sx={{ py: 2 }}>
           <Grid container spacing={4} justifyContent="center">
               <Grid item xs={12} sm={6} md={4}>
-                <Card sx={{ height: '100%', display: 'flex'}}>
+                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
                     <CardContent sx={{ flexGrow: 1 }} align='center' >
                     <PersonIcon fontSize='large'></PersonIcon>
                     <Typography gutterBottom variant="h6" component="h2">
@@ -77,7 +67,7 @@ export default function Album() {
         <Container sx={{ py: 2 }}>
           <Grid container spacing={4} justifyContent="center">
               <Grid item xs={8} sm={6} md={4}>
-                <Card sx={{ height: '100%', display: 'flex'}}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
                     <CardContent sx={{ flexGrow: 1 }} align='center' >
                     <PaidIcon fontSize='large' ></PaidIcon>
                     <Typography gutterBottom variant="h6" component="h2">

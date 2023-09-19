@@ -1,6 +1,8 @@
-import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Paper, CssBaseline } from '@mui/material';
+import { Avatar, Button, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Paper, CssBaseline, Alert } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState, useEffect } from 'react';
+import { useNavigate, json } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -15,17 +17,51 @@ function Copyright(props) {
 }
 
 const defaultTheme = createTheme();
-function SignInSide() {
-  
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+function Login() {
 
+  const[ email, setEmail ] = useState ( "" );
+  const[ senha, setSenha ] = useState ( "" );
+  const[ lembrar, setLembrar ] = useState ( false );
+  const[ login, setLogin ] = useState ( false );
+  const[ erro, setErro ] = useState ( false );
+  const navigate = useNavigate();
+
+  useEffect( () => {
+  
+      if( login ) {
+          localStorage.setItem( "usuario" , JSON.stringify( {email: email } ) );
+          setEmail( "" );
+          setSenha( "" );
+          navigate( "/" );
+      }
+
+  }, [ login ] );
+
+  function Autenticar( evento )
+  {
+      evento.preventDefault();
+      fetch( process.env.REACT_APP_BACKEND + "login", {
+      method: "POST",
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(
+          {
+              email: email,
+              senha: senha
+          }
+      )
+  } )
+  .then( (resposta) => resposta.json() )
+  .then( ( json ) => { 
+      if( json.user ) {
+          setLogin( true );
+      } else {
+          setErro( true );
+      }
+  } )
+  .catch( ( erro ) => {setErro( true ) } )
+}
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -56,23 +92,28 @@ function SignInSide() {
             <Typography component="h1" variant="h5">
               Entrar
             </Typography>
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            { erro && ( <Alert severity="warning">Revise seus dados e tente novamente</Alert > ) }
+            <Box component="form" onSubmit={Autenticar} sx={{ mt: 1 }}>
               <TextField
+                type="email"
+                label="Email" 
                 margin="normal"
+                value={email}
+                onChange={ (e) => setEmail( e.target.value ) }
                 fullWidth
-                label="Email"
-                name="email"
+                {...erro && ( "error" ) }
               />
               <TextField
-                margin="normal"
-                fullWidth
-                name="password"
-                label="Senha"
                 type="password"
+                label="Senha"
+                margin="normal" 
+                fullWidth
+                value={senha}
+                onChange={ (e) => setSenha( e.target.value ) }
               />
 
               <FormControlLabel 
-              control={<Checkbox value="remember" color="primary" />}
+              control= { <Checkbox value={lembrar} name="lembrar" onChange={(e) => setLembrar( !lembrar ) } />}
               label="Lembrar-me"
               />
               <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} color="primary">Entrar</Button>
@@ -83,7 +124,7 @@ function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="http://localhost:3000/cadastro2" variant="body2">
+                  <Link href="http://localhost:3000/cadastro" variant="body2">
                     Cadastre-se
                   </Link>
                 </Grid>
@@ -97,4 +138,4 @@ function SignInSide() {
   );
 }
 
-export default SignInSide;
+export default Login;

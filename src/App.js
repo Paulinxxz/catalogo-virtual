@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Produto from "./components/Produto";
-import { Container, AppBar, Toolbar, CssBaseline, Typography } from "@mui/material";
+import { Container, AppBar, Toolbar, CssBaseline, Typography, Avatar } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
@@ -46,12 +46,9 @@ function App() {
     <>
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <AppBar position="relative" >
-        <Toolbar>
-          <Typography align="center" variant="h6" color="white">
-              Camisas de Futebol 
-          </Typography>
-        </Toolbar>
+      <AppBar position="relative" sx={{
+        height: 60,
+      }}>
       </AppBar>
     </ThemeProvider>
       <Container sx={{

@@ -7,12 +7,11 @@ import Cadastro from './cadastro'
 import Produtos from './produtos'
 import EditaProdutos from './EditaProdutos';
 import Login from './login';
-import Cadastro2 from './cadastro2'
 import Produtos2 from './produtos2'
-import Login2 from './login2'
 import EsqueciSenha from './EsqueciSenha'
 import EmailEnviado from './EmailEnviado'
 import Suporte from './suporte'
+import Home from './home'
 
 const theme = createTheme({
   palette: {
@@ -40,7 +39,7 @@ const theme = createTheme({
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/app",
     element: <App />
   }, 
   {
@@ -48,20 +47,16 @@ const router = createBrowserRouter([
     element: <Suporte />
   },
   {
+    path: "/",
+    element: <Home />
+  },
+  {
     path: "/login",
     element: <Login /> 
   },
   {
-    path: "/login2",
-    element: <Login2 /> 
-  },
-  {
     path: "/cadastro",
     element: <Cadastro />
-  },
-  {
-    path: "/cadastro2",
-    element: <Cadastro2 /> 
   },
   {
     path: "/produtos",
