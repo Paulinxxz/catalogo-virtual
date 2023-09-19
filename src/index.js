@@ -7,7 +7,6 @@ import Cadastro from './cadastro'
 import Produtos from './produtos'
 import EditaProdutos from './EditaProdutos';
 import Login from './login';
-import Produtos2 from './produtos2'
 import EsqueciSenha from './EsqueciSenha'
 import EmailEnviado from './EmailEnviado'
 import Suporte from './suporte'
@@ -61,10 +60,6 @@ const router = createBrowserRouter([
   {
     path: "/produtos",
     element: <Produtos />
-  },
-  {
-    path: "/produtos2",
-    element: <Produtos2 />
   },
   {
     path: "/edicao/:id",
