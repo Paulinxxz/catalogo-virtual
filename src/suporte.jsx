@@ -27,7 +27,7 @@ export default function Album() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-            <a href='http://localhost:3000/home' ><CloseIcon fontSize='large'></CloseIcon></a>
+            <a href='http://localhost:3000' ><CloseIcon fontSize='large'></CloseIcon></a>
         </Toolbar>
       </AppBar>
       <main>

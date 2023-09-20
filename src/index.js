@@ -4,8 +4,8 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Cadastro from './cadastro'
-import Produtos from './produtos'
-import EditaProdutos from './EditaProdutos';
+import Camisas from './camisas'
+import EditaCamisas from './EditaCamisas';
 import Login from './login';
 import EsqueciSenha from './EsqueciSenha'
 import EmailEnviado from './EmailEnviado'
@@ -58,12 +58,12 @@ const router = createBrowserRouter([
     element: <Cadastro />
   },
   {
-    path: "/produtos",
-    element: <Produtos />
+    path: "/camisas",
+    element: <Camisas />
   },
   {
     path: "/edicao/:id",
-    element: <EditaProdutos />
+    element: <EditaCamisas />
   },
   {
     path: "/esquecisenha",

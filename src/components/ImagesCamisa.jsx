@@ -11,13 +11,13 @@ import { useState } from "react";
 
 function ImagesCamisa() {
 
-  const [value, setValue] = useState(2);
-  const [value1, setValue1] = useState(2);
-  const [value2, setValue2] = useState(2);
-  const [value3, setValue3] = useState(2);
-  const [value4, setValue4] = useState(2);
-  const [value5, setValue5] = useState(2);
-  const [value6, setValue6] = useState(2);
+  const [value7, setValue7] = useState(2);
+  const [value8, setValue8] = useState(2);
+  const [value9, setValue9] = useState(2);
+  const [value10, setValue10] = useState(2);
+  const [value11, setValue11] = useState(2);
+  const [value12, setValue12] = useState(2);
+  const [value13, setValue13] = useState(2);
 
   return (
 
@@ -25,7 +25,7 @@ function ImagesCamisa() {
       <Typography variant="h5" align="left" fontWeight="bold"><br />
         Camisas em destaque:
       </Typography><br />
-      <Container maxWidth="large">
+      <Container maxWidth="sx">
         <Box display="flex" align="center" gap="20px">
           <Box fontSize="13px" fontWeight="bold" >
             <span>Camisa Adidas São Paulo 23/24 - Jogo 2</span>
@@ -33,9 +33,9 @@ function ImagesCamisa() {
             <Box>
               <Typography align="center" style={{ fontSize: '15px', fontWeight: 'bold' }} >R$349,99</Typography>
               <Rating style={{ fontSize: 'large' }}
-                value={value6}
+                value={value7}
                 onChange={(event, newValue) => {
-                  setValue6(newValue);
+                  setValue7(newValue);
                 }}
               />
             </Box>
@@ -46,9 +46,9 @@ function ImagesCamisa() {
             <Box>
               <Typography align="center" style={{ fontSize: '15px', fontWeight: 'bold' }} >R$299,99</Typography>
               <Rating style={{ fontSize: 'large' }}
-                value={value6}
+                value={value8}
                 onChange={(event, newValue) => {
-                  setValue6(newValue);
+                  setValue8(newValue);
                 }}
               />
             </Box>
@@ -59,9 +59,9 @@ function ImagesCamisa() {
             <Box>
               <Typography align="center" style={{ fontSize: '15px', fontWeight: 'bold' }} >R$349,99</Typography>
               <Rating style={{ fontSize: 'large' }}
-                value={value6}
+                value={value9}
                 onChange={(event, newValue) => {
-                  setValue6(newValue);
+                  setValue9(newValue);
                 }}
               />
             </Box>
@@ -72,9 +72,9 @@ function ImagesCamisa() {
             <Box>
               <Typography align="center" style={{ fontSize: '15px', fontWeight: 'bold' }} >R$263,99</Typography>
               <Rating style={{ fontSize: 'large' }}
-                value={value6}
+                value={value10}
                 onChange={(event, newValue) => {
-                  setValue6(newValue);
+                  setValue10(newValue);
                 }}
               />
             </Box>
@@ -85,9 +85,9 @@ function ImagesCamisa() {
             <Box>
               <Typography align="center" style={{ fontSize: '15px', fontWeight: 'bold' }} >R$349,99</Typography>
               <Rating style={{ fontSize: 'large' }}
-                value={value6}
+                value={value11}
                 onChange={(event, newValue) => {
-                  setValue6(newValue);
+                  setValue11(newValue);
                 }}
               />
             </Box>
@@ -98,9 +98,9 @@ function ImagesCamisa() {
             <Box>
               <Typography align="center" style={{ fontSize: '15px', fontWeight: 'bold' }} >R$299,99</Typography>
               <Rating style={{ fontSize: 'large' }}
-                value={value6}
+                value={value12}
                 onChange={(event, newValue) => {
-                  setValue6(newValue);
+                  setValue12(newValue);
                 }}
               />
             </Box>
@@ -111,9 +111,9 @@ function ImagesCamisa() {
             <Box>
               <Typography align="center" style={{ fontSize: '15px', fontWeight: 'bold' }} >R$229,99</Typography>
               <Rating style={{ fontSize: 'large' }}
-                value={value6}
+                value={value13}
                 onChange={(event, newValue) => {
-                  setValue6(newValue);
+                  setValue13(newValue);
                 }}
               />
             </Box>

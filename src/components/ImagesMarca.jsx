@@ -13,12 +13,12 @@ function ImagesMarca() {
           Nossas marcas
     </Typography><br />
     <Container maxWidth="large">
-        <Box display="flex" gap="100px" justifyContent="center">
+        <Box display="flex" gap="100px" justifyContent="center" width="100%">
             <img style={{ width: '50px', height: '50px'}} src={nike}/>
             <img style={{ width: '50px', height: '50px'}} src={adidas}/>
             <img style={{ width: '50px', height: '50px'}} src={jordan}/>
             <img style={{ width: '50px', height: '50px'}} src={puma}/>
-            <img style={{ width: '70px', height: '50px'}} src={kappa}/>
+            <img style={{height: '50px'}} src={kappa}/>
         </Box>
     </Container>
     </>

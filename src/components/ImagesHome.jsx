@@ -29,61 +29,41 @@ import Img32 from './images/ceara.png';
 import Img33 from './images/crb.png';
 import Img34 from './images/juventde.png';
 import Img35 from './images/vilanova.png';
-import Img36 from './images/lond.png';
-import Img37 from './images/bota.png';
-import Img38 from './images/itu.png';
-import Img39 from './images/mirassol.png';
-import Img40 from './images/sampa.png';
-import Img41 from './images/ponte.png';
-import Img42 from './images/ava.png';
-import Img43 from './images/chape.png';
-import Img44 from './images/tomb.png';
-import Img45 from './images/abc.png';
 
 function ImagesHome() {
   return (
-    <Container maxWidth="large">
-            <Box display="flex" sx={{mt:-7, ml:-3}}>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img6}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img7}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img8}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img9}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img10}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img11}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img12}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img13}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img14}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img15}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img16}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img17}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img18}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img19}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img20}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img21}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img22}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img23}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img24}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img25}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img26}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img27}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img28}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img29}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img30}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img31}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img32}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img33}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img34}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img35}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img36}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img37}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img38}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img39}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img40}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img41}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img42}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img43}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img44}/>
-              <img style={{ width: '2.5%', paddingLeft:'10px', paddingBottom:'10px'}} src={Img45}/>
+    <Container maxWidth="sx">
+            <Box sx={{ display: 'inline-block' }}>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img6}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img7}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img8}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img9}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img10}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img11}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img12}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img13}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img14}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img15}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img16}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img17}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img18}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img19}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img20}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img21}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img22}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img23}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img24}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img25}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img26}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img27}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img28}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img29}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img30}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img31}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img32}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img33}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img34}/>
+              <img style={{ transform: 'scale(0.6)', paddingBottom:'10px'}} src={Img35}/>
               </Box>
     </Container>
   )

@@ -2,7 +2,7 @@ import { Box, Button, Container, TextField, Typography, Alert } from "@mui/mater
 import React, { useEffect } from "react";
 import { useState } from 'react';
 
-function Filmes() {
+function Camisas() {
     const[ titulo, setTitulo ] = useState ( "" );
     const[ descricao, setDescricao ] = useState ( "" );
     const[ ano, setAno ] = useState ( "" );
@@ -12,7 +12,7 @@ function Filmes() {
     const[ cadastro, setCadastro ] = useState ( false );
     const[ erro, setErro ] = useState ( false );
 
-    function CadastrarFilmes( evento ) {
+    function CadastrarCamisas( evento ) {
 
         evento.preventDefault();
         fetch( process.env.REACT_APP_BACKEND + "filmes", {
@@ -66,10 +66,10 @@ function Filmes() {
             alignItems: "center",
             background: "#9BCD8A",
         }}>
-            <Typography component="h1" variant='h5'>Cadastre seu Produto</Typography>
-            { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Filme já cadastrado. Tente novamente por favor!</Alert> )}
-            { cadastro && ( <Alert severity="success" sx={{ mt: 2, mb: 2 }} >Obrigado por cadastrar seu filme!</Alert> )}
-            <Box component="form" onSubmit={CadastrarFilmes} >
+            <Typography component="h1" variant='h5'>Cadastre uma Camisa</Typography>
+            { erro && ( <Alert severity="warning" sx={{ mt: 2, mb: 2 }} >Camisa já cadastrada. Tente novamente jogador(a)!</Alert> )}
+            { cadastro && ( <Alert severity="success" sx={{ mt: 2, mb: 2 }} >Boaa! Camisa cadastrada. Obrigado jogador(a)</Alert> )}
+            <Box component="form" onSubmit={CadastrarCamisas} >
                 <TextField
                     type="text"
                     label="Titulo" 
@@ -124,13 +124,13 @@ function Filmes() {
                     value={imagem}
                     onChange={ (e) => setImagem( e.target.value ) }
                 />
-                <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 2}} color="primary" >Cadastrar</Button>
+                <Button type="submit" variant="contained" fullWidth sx={ {mt: 2, mb: 2}} color="primary">Cadastrar</Button>
             </Box>
         </Box>
     </Container>
   )
 }
 
-export default Filmes;
+export default Camisas;
 
 
