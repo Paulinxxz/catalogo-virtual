@@ -4,7 +4,7 @@ import SecurityIcon from '@mui/icons-material/Security';
 import PersonIcon from '@mui/icons-material/Person';
 import PaidIcon from '@mui/icons-material/Paid';
 import ChatIcon from '@mui/icons-material/Chat';
-import CloseIcon from '@mui/icons-material/Close';
+import ReplyIcon from '@mui/icons-material/Reply';
 
 function Copyright() {
   return (
@@ -27,7 +27,7 @@ export default function Album() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-            <a href='http://localhost:3000' ><CloseIcon fontSize='large'></CloseIcon></a>
+          <a href="http://localhost:3000/" ><ReplyIcon fontSize="large" sx={{ ml: 2, mt: 1, color: 'white' }} ></ReplyIcon></a>
         </Toolbar>
       </AppBar>
       <main>
@@ -46,64 +46,64 @@ export default function Album() {
             >Suporte
             </Typography>
             <Typography variant="h6" align="center" color="gray">
-            Procurar ajuda por categoria
+              Procurar ajuda por categoria
             </Typography>
           </Container>
         </Box>
         <Container sx={{ py: 2 }}>
           <Grid container spacing={4} justifyContent="center">
-              <Grid item xs={12} sm={6} md={4}>
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
-                    <CardContent sx={{ flexGrow: 1 }} align='center' >
-                    <PersonIcon fontSize='large'></PersonIcon>
-                    <Typography gutterBottom variant="h6" component="h2">
-                      Conta
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardContent sx={{ flexGrow: 1 }} align='center' >
+                  <PersonIcon fontSize='large'></PersonIcon>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Conta
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Container>
         <Container sx={{ py: 2 }}>
           <Grid container spacing={4} justifyContent="center">
-              <Grid item xs={8} sm={6} md={4}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
-                    <CardContent sx={{ flexGrow: 1 }} align='center' >
-                    <PaidIcon fontSize='large' ></PaidIcon>
-                    <Typography gutterBottom variant="h6" component="h2">
-                      Reembolsos
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+            <Grid item xs={8} sm={6} md={4}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardContent sx={{ flexGrow: 1 }} align='center' >
+                  <PaidIcon fontSize='large' ></PaidIcon>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Reembolsos
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Container>
         <Container sx={{ py: 2 }}>
           <Grid container spacing={4} justifyContent="center">
-              <Grid item xs={8} sm={6} md={4}>
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardContent sx={{ flexGrow: 1 }} align='center' >
-                    <ChatIcon fontSize='large' ></ChatIcon>
-                    <Typography gutterBottom variant="h6" component="h2">
-                      Reclamações
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+            <Grid item xs={8} sm={6} md={4}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardContent sx={{ flexGrow: 1 }} align='center' >
+                  <ChatIcon fontSize='large' ></ChatIcon>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Reclamações
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Container>
         <Container sx={{ py: 2 }}>
           <Grid container spacing={4} justifyContent="center">
-              <Grid item xs={12} sm={6} md={4}>
-                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                    <CardContent align='center' >
-                    <SecurityIcon fontSize='large' ></SecurityIcon>
-                    <Typography gutterBottom variant="h6" component="h2">
-                      Segurança
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                <CardContent align='center' >
+                  <SecurityIcon fontSize='large' ></SecurityIcon>
+                  <Typography gutterBottom variant="h6" component="h2">
+                    Segurança
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Container>
       </main>

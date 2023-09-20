@@ -29,7 +29,6 @@ function Login() {
   useEffect( () => {
   
       if( login ) {
-          localStorage.setItem( "usuario" , JSON.stringify( {email: email } ) );
           setEmail( "" );
           setSenha( "" );
           navigate( "/" );
@@ -55,8 +54,10 @@ function Login() {
   .then( (resposta) => resposta.json() )
   .then( ( json ) => { 
       if( json.user ) {
+        localStorage.setItem( "usuario" , JSON.stringify( json.user._id ));
           setLogin( true );
       } else {
+        localStorage.removeItem( "usuario" );
           setErro( true );
       }
   } )
